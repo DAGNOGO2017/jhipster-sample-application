@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="personne">
+            <h2><span>Personne</span> {{personne.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Id Personne</span></dt>
+                <dd>
+                    <span>{{personne.idPersonne}}</span>
+                </dd>
+                <dt><span>Nom</span></dt>
+                <dd>
+                    <span>{{personne.nom}}</span>
+                </dd>
+                <dt><span>Prenom</span></dt>
+                <dd>
+                    <span>{{personne.prenom}}</span>
+                </dd>
+                <dt><span>Activite</span></dt>
+                <dd>
+                    <span *ngFor="let activite of personne.activites; let last = last">
+                        <a [routerLink]="['/activite', activite?.id, 'view' ]">{{activite.idActivite}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Petition</span></dt>
+                <dd>
+                    <span *ngFor="let petition of personne.petitions; let last = last">
+                        <a [routerLink]="['/petition', petition?.id, 'view' ]">{{petition.idPetition}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/personne', personne.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

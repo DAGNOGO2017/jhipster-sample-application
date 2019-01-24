@@ -1,0 +1,30 @@
+{
+    "name": "Don",
+    "fields": [
+        {
+            "fieldName": "idDon",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "natureDon",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "personne",
+            "otherEntityName": "personne",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190124130224",
+    "entityTableName": "don",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

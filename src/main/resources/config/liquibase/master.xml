@@ -5,6 +5,12 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190124130221_added_entity_Personne.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190124130222_added_entity_Petition.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190124130223_added_entity_Activite.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190124130224_added_entity_Don.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190124130221_added_entity_constraints_Personne.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190124130224_added_entity_constraints_Don.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

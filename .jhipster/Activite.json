@@ -1,0 +1,35 @@
+{
+    "name": "Activite",
+    "fields": [
+        {
+            "fieldName": "idActivite",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nomActivite",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "personne",
+            "otherEntityName": "personne",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "activite"
+        }
+    ],
+    "changelogDate": "20190124130223",
+    "javadoc": "not an ignored comment",
+    "entityTableName": "activite",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

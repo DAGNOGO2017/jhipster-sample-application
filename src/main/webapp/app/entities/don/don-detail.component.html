@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="don">
+            <h2><span>Don</span> {{don.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Id Don</span></dt>
+                <dd>
+                    <span>{{don.idDon}}</span>
+                </dd>
+                <dt><span>Nature Don</span></dt>
+                <dd>
+                    <span>{{don.natureDon}}</span>
+                </dd>
+                <dt><span>Personne</span></dt>
+                <dd>
+                    <div *ngIf="don.personne">
+                        <a [routerLink]="['/personne', don.personne?.id, 'view']">{{don.personne?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/don', don.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

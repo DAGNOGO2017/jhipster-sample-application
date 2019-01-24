@@ -1,0 +1,50 @@
+{
+    "name": "Personne",
+    "fields": [
+        {
+            "fieldName": "idPersonne",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenom",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "don",
+            "otherEntityName": "don",
+            "otherEntityRelationshipName": "personne"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "personne",
+            "relationshipName": "activite",
+            "otherEntityName": "activite",
+            "otherEntityField": "idActivite",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "personne",
+            "relationshipName": "petition",
+            "otherEntityName": "petition",
+            "otherEntityField": "idPetition",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190124130221",
+    "entityTableName": "personne",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
