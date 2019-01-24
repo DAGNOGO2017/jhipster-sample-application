@@ -1,0 +1,53 @@
+
+entity Personne {
+	idPersonne Integer,
+    nom String,
+    prenom String,
+}
+entity Petition {
+	idPetition Integer,
+    libelepetition String,
+}
+// an ignored comment
+/** not an ignored comment */
+entity Activite {
+	idActivite Integer,
+	nomActivite String required,
+}
+
+entity Don {
+	idDon Integer,
+    NatureDon String,
+}
+
+relationship ManyToMany {
+	Personne{activite(idActivite)} to Activite{personne}
+}
+relationship ManyToMany {
+	Personne{petition(idPetition)} to Petition{personne}
+}
+
+relationship OneToMany {
+	Personne{don} to Don,
+}
+
+
+
+
+
+
+
+
+
+// Set pagination options
+paginate Activite, Personne with infinite-scroll
+paginate Don with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Personne, Don
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
